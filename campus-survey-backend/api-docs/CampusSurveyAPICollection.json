@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "96807fba-7da2-4db2-81c9-523a5a194bd8",
+		"name": "Campus Survey API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40117138",
+		"_collection_link": "https://campussurvey.postman.co/workspace/Team-Workspace~ac0b6ee5-919a-4a7d-8e05-e8d04263389d/collection/40117138-96807fba-7da2-4db2-81c9-523a5a194bd8?action=share&source=collection_link&creator=40117138"
+	},
+	"item": [
+		{
+			"name": "Get All Surveys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/surveys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"surveys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Survey",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "Delete Survey",
+					"host": [
+						"Delete Survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Survey",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jane Doe\",\n    \"email\": \"jane.doe@example.com\",\n    \"feedback\": \"The campus was amazing!\",\n    \"visitDate\": \"2024-12-01\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/surveys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"surveys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
