@@ -1,66 +1,24 @@
-package com.example.campus_survey_backend.entity;
+package com.example.campus_survey_backend.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "surveys")
-public class Survey {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SurveyDTO {
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private String address;
-
-    @Column(nullable = false)
     private String city;
-
-    @Column(nullable = false)
     private String state;
-
-    @Column(nullable = false)
     private String zip;
-
-    @Column(nullable = false)
     private String phone;
-
-    @Column(nullable = false)
     private String email;
-
-    @Column(nullable = false)
     private String feedback;
-
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @Column(nullable = false)
     private LocalDate visitDate;
-
-    @Column(nullable = false)
     private String gradMonth;
-
-    @Column(nullable = false)
     private int gradYear;
-
-    @JsonIgnore
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "liked_campus", joinColumns = @JoinColumn(name = "survey_id"))
-    @Column(name = "liked_option")
     private List<String> likedCampus;
-
-
-    @Column(nullable = false)
     private String recommendLevel;
-    @Column(name = "interested_in", nullable = false)
     private String interestedIn;
-
-
 
     // Getters and Setters
     public Long getId() {
@@ -174,6 +132,7 @@ public class Survey {
     public void setRecommendLevel(String recommendLevel) {
         this.recommendLevel = recommendLevel;
     }
+
     public String getInterestedIn() {
         return interestedIn;
     }
